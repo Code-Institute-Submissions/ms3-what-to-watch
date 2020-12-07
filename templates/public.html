@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What To Watch?</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     {% for movie in movies %}
         {{ movie.movie_name }}<br>
         {{ movie.genre_name }}<br>
@@ -15,5 +10,5 @@
         {{ movie.country }}<br>
         {{ movie.language }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
