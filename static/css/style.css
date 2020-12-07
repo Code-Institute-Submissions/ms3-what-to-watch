@@ -1,3 +1,38 @@
 body {
     background-color: #cfd8dc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav .brand-logo {
+    padding-left: 5px;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    padding: 0;
+}
+
+.footer-links {
+    margin: 0 auto;
+    display: inline-flex;
+    font-size: 25px;
+}
+
+.footer-links a {
+    margin: 0 25px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-links a:hover {
+    color: #cfd8dc;
 }
