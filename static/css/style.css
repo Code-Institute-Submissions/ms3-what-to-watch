@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 body {
-    background-color: #cfd8dc;
+    background-color: #80cbc4;
     font-family: 'Cabin', sans-serif;
     display: flex;
     min-height: 100vh;
@@ -10,7 +10,7 @@ body {
 
 /* Navbar and Sidebar */
 .text-shadow {
-    text-shadow: 3px 3px 3px rgba(242, 228, 58, 0.5);
+    text-shadow: 3px 3px 3px rgba(128, 203, 196, 0.5);
 }
 
 nav .brand-logo {
@@ -20,6 +20,10 @@ nav .brand-logo {
 /* Main content */
 main {
     flex: 1 0 auto;
+}
+
+.collapse-style {
+    border: 2px solid #424242;
 }
 
 /* Footer */
@@ -40,5 +44,5 @@ main {
 }
 
 .footer-links a:hover {
-    color: #cfd8dc;
+    color: #80cbc4;
 }
