@@ -28,6 +28,11 @@ def get_movies():
     return render_template("movies.html", movies=movies)
 
 
+@app.route("/add_movie")
+def add_movie():
+    return render_template("add_movie.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
