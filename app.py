@@ -34,10 +34,22 @@ def add_movie():
     if request.method == "POST":
         mongo.db.movies.insert_one(request.form.to_dict())
         flash("You Have Added A Movie")
-        return redirect("get_movies")
+        return redirect("get_home")
 
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_movie.html", genres=genres)
+
+
+@app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
+def edit_movie(movie_id):
+    if request.method == "POST":
+        mongo.db.movies.update(
+            {"_id": ObjectId(movie_id)}, request.form.to_dict())
+        flash("You Have Updated A Movie Info")
+
+    movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    return render_template("edit_movie.html", movie=movie, genres=genres)
 
 
 if __name__ == "__main__":

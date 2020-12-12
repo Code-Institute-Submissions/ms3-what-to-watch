@@ -30,6 +30,11 @@ main {
     border: 2px solid #424242;
 }
 
+.btn-small {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 /* Footer */
 .page-footer {
     padding: 0;
