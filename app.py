@@ -1,3 +1,4 @@
+# The code for app.py is from CI "Putting it all together" mini-project
 import os
 from flask import (
     Flask, flash, render_template,
@@ -28,8 +29,13 @@ def get_movies():
     return render_template("movies.html", movies=movies)
 
 
-@app.route("/add_movie")
+@app.route("/add_movie", methods=["GET", "POST"])
 def add_movie():
+    if request.method == "POST":
+        mongo.db.movies.insert_one(request.form.to_dict())
+        flash("You Have Added A Movie")
+        return redirect("get_movies")
+
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_movie.html", genres=genres)
 
