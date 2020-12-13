@@ -11,7 +11,7 @@
                         <span class="card-title">{{ genre.genre_name }}</span>
                     </div>
                     <div class="card-action">
-                        <a href="" class="btn-small cyan lighten-5 black-text">Movies</a>
+                        <a href="{{ url_for('get_genre_movies') }}" class="btn-small cyan lighten-5 black-text">Movies</a>
                     </div>
                 </div>
             </div>

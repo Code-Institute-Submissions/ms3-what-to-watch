@@ -67,6 +67,12 @@ def get_genres():
     return render_template("genres.html", genres=genres)
 
 
+@app.route("/get_genre_movies")
+def get_genre_movies():
+    movies = list(mongo.db.movies.find().sort("genre_name", 1))
+    return render_template("genre_movies.html", movies=movies)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
