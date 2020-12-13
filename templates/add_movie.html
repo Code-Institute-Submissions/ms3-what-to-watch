@@ -8,21 +8,18 @@
     
     <div class="row add-form">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_movie') }}">
-            <div class="input-field col s12 cyan lighten-5">
-                <i class="fas fa-theater-masks prefix grey-text text-darken-3"></i>
-                <select id="genre_name" name="genre_name" multiple class="validate" required>
-                    <option value="" disabled selected>Genre: </option>
-                    {% for genre in genres %}
-                    <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
-                    {% endfor %}
-                </select>
-                <label for="genre_name"></label>
+            <div class="row">
+                <div class="input-field col s12 cyan lighten-5">
+                    <i class="fas fa-theater-masks prefix grey-text text-darken-3"></i>
+                    <input id="genre_name" name="genre_name" minlength="2" maxlength="50" type="text" class="validate" required>
+                    <label for="genre_name">Genre:</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 cyan lighten-5">
                     <i class="fas fa-film prefix grey-text text-darken-3"></i>
                     <input id="movie_name" name="movie_name" minlength="2" maxlength="50" type="text" class="validate" required>
-                    <label for="movie_name">Movie Name</label>
+                    <label for="movie_name">Movie Name:</label>
                 </div>
             </div>
             <div class="row">
@@ -30,7 +27,7 @@
                     <i class="fas fa-user-tie prefix grey-text text-darken-3"></i>
                     <input id="director" name="director" minlength="5" maxlength="25"
                         type="text" class="validate" required>
-                    <label for="director">Movie Director</label>
+                    <label for="director">Movie Director:</label>
                 </div>
             </div>
             <div class="row">
@@ -38,7 +35,7 @@
                     <i class="fas fa-star prefix grey-text text-darken-3"></i>
                     <input id="main_cast" name="main_cast" minlength="5" maxlength="50"
                         type="text" class="validate" required>
-                    <label for="main_cast">Movie Stars</label>
+                    <label for="main_cast">Movie Stars:</label>
                 </div>
             </div>
             <div class="row">
@@ -46,7 +43,7 @@
                     <i class="fas fa-calendar-day prefix grey-text text-darken-3"></i>
                     <input id="year" name="year" minlength="4" maxlength="4"
                         type="text" class="validate" required>
-                    <label for="year">Year</label>
+                    <label for="year">Year:</label>
                 </div>
             </div>
             <div class="row">
@@ -54,7 +51,7 @@
                     <i class="fas fa-globe prefix grey-text text-darken-3"></i>
                     <input id="country" name="country" minlength="2" maxlength="25"
                         type="text" class="validate" required>
-                    <label for="country">Country</label>
+                    <label for="country">Country:</label>
                 </div>
             </div>
             <div class="row">
@@ -62,7 +59,7 @@
                     <i class="fas fa-language prefix grey-text text-darken-3"></i>
                     <input id="language" name="language" minlength="5" maxlength="25"
                         type="text" class="validate" required>
-                    <label for="language">Language</label>
+                    <label for="language">Language:</label>
                 </div>
             </div>
             <div class="row">

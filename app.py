@@ -36,7 +36,7 @@ def add_movie():
     if request.method == "POST":
         mongo.db.movies.insert_one(request.form.to_dict())
         flash("You Have Added A Movie")
-        return redirect("get_home")
+        return redirect("get_movies")
 
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_movie.html", genres=genres)
@@ -48,7 +48,6 @@ def edit_movie(movie_id):
         mongo.db.movies.update(
             {"_id": ObjectId(movie_id)}, request.form.to_dict())
         flash("You Have Updated A Movie Info")
-        return redirect("get_home")
 
     movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
@@ -60,6 +59,12 @@ def delete_movie(movie_id):
     mongo.db.movies.remove({"_id": ObjectId(movie_id)})
     flash("You Have Deleted A Movie")
     return redirect(url_for("get_home"))
+
+
+@app.route("/get_genres")
+def get_genres():
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    return render_template("genres.html", genres=genres)
 
 
 if __name__ == "__main__":
