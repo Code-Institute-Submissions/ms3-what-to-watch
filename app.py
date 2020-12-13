@@ -1,4 +1,6 @@
-# The code for app.py is from CI "Putting it all together" mini-project
+# The code for app.py is written following the
+# CI "Putting it all together" mini-project
+# and furher developed for the needs of this project
 import os
 from flask import (
     Flask, flash, render_template,
@@ -46,10 +48,18 @@ def edit_movie(movie_id):
         mongo.db.movies.update(
             {"_id": ObjectId(movie_id)}, request.form.to_dict())
         flash("You Have Updated A Movie Info")
+        return redirect("get_home")
 
     movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("edit_movie.html", movie=movie, genres=genres)
+
+
+@app.route("/delete_movie/<movie_id>")
+def delete_movie(movie_id):
+    mongo.db.movies.remove({"_id": ObjectId(movie_id)})
+    flash("You Have Deleted A Movie")
+    return redirect(url_for("get_home"))
 
 
 if __name__ == "__main__":

@@ -23,8 +23,14 @@
                     <p>Language: <em>{{ movie.language }}</em></p>
                     <div class="col s12">
                         <!--If I have time! - Put here star rating for the movie  -->
-                        <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="btn-small waves-effect black-text cyan lighten-5">Edit</a>
-                        <a href="" class="btn-small waves-effect grey darken-3">Delete</a>
+                        <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" 
+                            class="btn-small waves-effect black-text cyan lighten-5">
+                            Edit
+                        </a>
+                        <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" 
+                            class="btn-small waves-effect grey darken-3">
+                            Delete
+                        </a>
                     </div>
                 </div>
             </li>
