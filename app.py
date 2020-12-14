@@ -22,7 +22,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def get_home():
-    return render_template("public.html")
+    movies = list(mongo.db.movies.find())
+    return render_template("public.html", movies=movies)
 
 
 @app.route("/get_movies")

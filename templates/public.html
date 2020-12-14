@@ -1,6 +1,65 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h4 class="center-align">Wondering <br> What To Watch?</h4>
+    <h5 class="center-align">Wondering What To Watch?</h5>    
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel center-align grey darken-3">
+                <span class="white-text">What To Watch website is a place where you 
+                    can find the answer to one of the most frequently asked question,
+                    especially in times like this, that is "What to watch?" Here we got you
+                    covered with recommendations for every taste.  
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="center-align">Search What To Watch</h5>
+
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field cyan lighten-5 black-text search-style">
+                <input id="search" name="search" type="search" required>
+                <label class="label-icon" for="search"><i class="fas fa-search"></i></label>
+            </div>
+        </form>
+    </div>
+
+    <h5 class="center-align grey-text text-darken-3">Recently Added</h5>
+
+    <ul class="collapsible popout">
+        {% for movie in movies %}
+            <li>
+                <div class="collapsible-header white-text grey darken-3">
+                    <div class="col s9">
+                        <i class="fas fa-film"></i>
+                        <strong>{{ movie.movie_name }}</strong> ({{ movie.year }})
+                    </div>
+                    <div class="col s3">
+                        <!--If I have time! - Put here rating for the movie  -->
+                    </div>
+                </div>
+                <div class="collapsible-body center-align collapse-style">
+                    <p>Genre: <em>{{ movie.genre_name }}</em></p>
+                    <p>Director: <em>{{ movie.director }}</em></p>
+                    <p>Stars: <em>{{ movie.main_cast }}</em></p>
+                    <p>Country: <em>{{ movie.country }}</em></p>
+                    <p>Language: <em>{{ movie.language }}</em></p>
+                    <div class="col s12">
+                        <!--If I have time! - Put here star rating for the movie  -->
+                        <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" 
+                            class="btn-small waves-effect black-text cyan lighten-5">
+                            Edit
+                        </a>
+                        <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" 
+                            class="btn-small waves-effect grey darken-3">
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
