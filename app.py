@@ -26,13 +26,13 @@ def get_home():
     return render_template("public.html", movies=movies)
 
 
-@app.route("/get_movies")
+@app.route("/movies/all")
 def get_movies():
     movies = list(mongo.db.movies.find())
     return render_template("movies.html", movies=movies)
 
 
-@app.route("/add_movie", methods=["GET", "POST"])
+@app.route("/movie/add", methods=["GET", "POST"])
 def add_movie():
     if request.method == "POST":
         mongo.db.movies.insert_one(request.form.to_dict())
@@ -43,7 +43,7 @@ def add_movie():
     return render_template("add_movie.html", genres=genres)
 
 
-@app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
+@app.route("/movie/<movie_id>/edit", methods=["GET", "POST"])
 def edit_movie(movie_id):
     if request.method == "POST":
         mongo.db.movies.update(
@@ -55,7 +55,7 @@ def edit_movie(movie_id):
     return render_template("edit_movie.html", movie=movie, genres=genres)
 
 
-@app.route("/delete_movie/<movie_id>")
+@app.route("/movie/<movie_id>/delete")
 def delete_movie(movie_id):
     mongo.db.movies.remove({"_id": ObjectId(movie_id)})
     flash("You Have Deleted A Movie")
