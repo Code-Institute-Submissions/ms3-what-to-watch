@@ -37,9 +37,15 @@ isn't being imported into the site correctly.
 
 ### Wireframes
 
-Mobile Device
+* Mobile Device
+   * [Home Page](https://raw.githubusercontent.com/dimitar-4/ms3-what-to-watch/master/static/images/wireframes/home%20mobile.png)
+   * [All Movies Page](https://raw.githubusercontent.com/dimitar-4/ms3-what-to-watch/master/static/images/wireframes/movies%20mobile.png)
+   * [Add Movie Page](https://raw.githubusercontent.com/dimitar-4/ms3-what-to-watch/master/static/images/wireframes/add%20mobile.png)
 
-Desktop Device
+* Desktop Device
+   * [Home Page](https://raw.githubusercontent.com/dimitar-4/ms3-what-to-watch/master/static/images/wireframes/home%20pc.png)
+   * [All Movies Page](https://raw.githubusercontent.com/dimitar-4/ms3-what-to-watch/master/static/images/wireframes/movies%20pc.png)
+   * [Add Movie Page](https://raw.githubusercontent.com/dimitar-4/ms3-what-to-watch/master/static/images/wireframes/add%20pc%20.png)
 
 ## Features
 
