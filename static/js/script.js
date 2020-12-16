@@ -3,6 +3,7 @@
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.dropdown-trigger').dropdown();
+    $('.tooltipped').tooltip();
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {

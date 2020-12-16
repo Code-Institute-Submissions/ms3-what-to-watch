@@ -34,7 +34,7 @@
         </form>
     </div>
 
-    <h5 class="center-align grey-text text-darken-3">Recently Added</h5>
+    <h5 class="center-align grey-text text-darken-3">Best Rated Movies</h5>
 
     <ul class="collapsible popout">
         {% for movie in movies %}
@@ -54,6 +54,7 @@
                     <p>Stars: <em>{{ movie.main_cast }}</em></p>
                     <p>Country: <em>{{ movie.country }}</em></p>
                     <p>Language: <em>{{ movie.language }}</em></p>
+                    <p>WTW Rating: <em>{{ movie.rating }} out of 9</em></p>
                     <div class="col s12">
                         <!--If I have time! - Put here star rating for the movie  -->
                         <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" 

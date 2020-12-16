@@ -52,6 +52,7 @@
                     <p>Stars: <em>{{ movie.main_cast }}</em></p>
                     <p>Country: <em>{{ movie.country }}</em></p>
                     <p>Language: <em>{{ movie.language }}</em></p>
+                    <p>WTW Rating: <em>{{ movie.rating }} out of 9</em></p>
                     <div class="col s12">
                         <!--If I have time! - Put here star rating for the movie  -->
                         <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" 

@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def get_home():
-    movies = list(mongo.db.movies.find())
+    movies = list(mongo.db.movies.find().sort("rating", -1))
     return render_template("public.html", movies=movies)
 
 
