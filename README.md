@@ -37,7 +37,29 @@ isn't being imported into the site correctly.
 
 ### Wireframes
 
+Mobile Device
+
+Desktop Device
+
 ## Features
+
+### Existing
+
+What To Watch website is responsive on mobile and desktop devices. Delivers a good contrasting color scheme for 
+the content, navigation menu, footer and all buttons throughout the website for better user experience.
+
+The website WTW is also containing CRUD(Create, Read, Update, Delete) functionality so the user can:
+   * Create new content on the website from the 'Add Movie' link in the navbar.
+   * Read the content on the website fro the 'All Movies' link in the navbar where is a complete list of the database content.
+   * Update an item's information by clicking on it and then select the 'Edit' button.
+   * Delete an item from the database by clicking on it and then select the 'Delete' button.
+
+### Left to Implement 
+
+   * Adding a register user, Log In/Out options so that the user can still see all the content in the website but restrict the access 
+to the edit and delete functionality to the items that were created only by specific user.
+   * Adding a comments sections where different users can share their opinions about the website, or specific item on the website. 
+
 
 ## Technologies Used
 
@@ -73,7 +95,7 @@ isn't being imported into the site correctly.
 
 ## Deployment
 
-1. Createing GitHub repo for the project website.
+1. Createing GitHub repository for the project website.
 2. Creating all necessary files in the GitPod workspace that Heroku needs to deploy the project 
 and pushed them to GitHub.
 3. Open Heroku.com and logged in, then in the upper right corner clicked on New/Create New App.
@@ -81,25 +103,36 @@ and pushed them to GitHub.
 4. When the app were loaded from the menu under the app title chose Deploy.
 5. From the available deployment methods chose GitHub(Connecting to GitHub)
 6. After clicking on GitHub under the deployment methods checked if the right GitHub profile is displayed, 
-and added the repo name for the project and clicked on the search button.
-7. When the repo was found and displayed clicked on the connect button under to connect the GitHub repo 
+and added the repository name for the project and clicked on the search button.
+7. When the repository was found and displayed clicked on the connect button under to connect the GitHub repository 
 with Heroku.
 8. Then, up to the menu again and clicked on settings.
 9. In settings clicked on 'Reveal Config Vars'.
    * There added key-value pairs for the required variables since a hidden python file contained environment variables.
 10. Clicked on the deploy option again from menu above and enabled the automatic deployment.  
-11. Selected wich branch(master) of the repo to be deployed and clicked 'Deploy Branch'.
+11. Selected wich branch(master) of the GitHub repository to be deployed and clicked 'Deploy Branch'.
 12. After the build was done a "Your app was successfully deployed" message was displayed with a 
 button 'View' to open the website.
+13. Link to the project's GitHub repository [here!](https://github.com/dimitar-4/ms3-what-to-watch)
+14. Live link from Heroku [here!](https://what-to-watch-project.herokuapp.com/) 
 
 ## Credits
 
 ### Code 
+   * The code for WTW project is following most of the steps shown in the Code Institute's 'Putting it all together' 
+   mini-project for building a task menager. What To Watch project's foundations are based on the code from 
+   those lesson series.
+   * Throughout the development process solutions for some code related problems were found in [StackOverflow](https://stackoverflow.com/) 
 
 ### Content
+   * All information about movie database is from [IMDb](https://www.imdb.com/) website.
+   * All other text is written from the developer.
 
 ### Media
 
-* The background image for the website is from [Pinterest](https://in.pinterest.com/)
+   * The background image for the website is from [Pinterest](https://in.pinterest.com/)
 
 ### Acknowledgements
+   * Akshat Garg (mentor) - THANK YOU for the advices, guidance, feedback and patience throughout the developing process of WTW project.
+   * Inspiration about the What To Watch project came from the same question I often ask my self or being asked from other people. The need 
+   for place where recommendations, good ideas can be stored and answer that question easy and fast.
