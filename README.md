@@ -5,7 +5,9 @@ Wondering What To Watch? [Try this here!](https://what-to-watch-project.herokuap
 What To Watch project is a website for sharing and finding media suggestions to other 
 users like movies, series, documentaries etc.
 It's an easy and quick way to answer the often asked question when we are sitting on the 
-couch with the remote in our hands for example and thinking  - What to watch?   
+couch with the remote in our hands for example and thinking  - What to watch? 
+
+[responsive-img](static/responsive/responsive_ms3.PNG)
 
 ## User Experience (UX)
 
