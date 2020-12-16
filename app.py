@@ -62,13 +62,13 @@ def delete_movie(movie_id):
     return redirect(url_for("get_home"))
 
 
-@app.route("/get_genres")
+@app.route("/genres")
 def get_genres():
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     return render_template("genres.html", genres=genres)
 
 
-@app.route("/get_genre_movies")
+@app.route("/genre/movies")
 def get_genre_movies():
     movies = list(mongo.db.movies.find().sort("genre_name", 1))
     return render_template("genre_movies.html", movies=movies)
