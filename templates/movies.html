@@ -20,11 +20,9 @@
             
                 <!-- Dropdown Structure -->
                 <ul id="dropdown1" class="dropdown-content">
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                    <li><a href="#!">three</a></li>
-                    <li><a href="#!">four</a></li>
-                    <li><a href="#!">five</a></li>
+                    {% for genre in genres %}
+                        <li><a href="{{ url_for('get_genre_movies', genre_name=genre.genre_name) }}">{{ genre.genre_name }}</a></li>
+                    {% endfor %}
                 </ul>
                 <a href="{{ url_for('get_movies') }}" class="cyan lighten-4 btn black-text search-button">Reset</a>
                 <button type="submit" class="btn grey darken-1 search-button" value="submit">Search</button>

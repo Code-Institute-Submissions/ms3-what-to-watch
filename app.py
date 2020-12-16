@@ -22,14 +22,21 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def get_home():
-    movies = list(mongo.db.movies.find().sort("rating", -1))
+    movies = mongo.db.movies.find().sort("rating", -1)
     return render_template("public.html", movies=movies)
 
 
 @app.route("/movies/all")
 def get_movies():
-    movies = list(mongo.db.movies.find())
-    return render_template("movies.html", movies=movies)
+    query = request.args.get('search')
+    movies = []
+    if query:
+        movies = list(mongo.db.movies.find({"$text": {"$search": query}}))
+    else:
+        movies = list(mongo.db.movies.find())
+
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    return render_template("movies.html", movies=movies, genres=genres)
 
 
 @app.route("/movie/add", methods=["GET", "POST"])
@@ -68,10 +75,10 @@ def get_genres():
     return render_template("genres.html", genres=genres)
 
 
-@app.route("/genre/movies")
-def get_genre_movies():
-    movies = list(mongo.db.movies.find().sort("genre_name", 1))
-    return render_template("genre_movies.html", movies=movies)
+@app.route("/genre/<genre_name>/movies")
+def get_genre_movies(genre_name):
+    movies = list(mongo.db.movies.find({"genre_name": genre_name}))
+    return render_template("genre_movies.html", genre_name=genre_name, movies=movies)
 
 
 if __name__ == "__main__":
