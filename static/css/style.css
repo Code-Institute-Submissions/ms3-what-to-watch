@@ -44,6 +44,11 @@ main {
     display: inline;
 }
 
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .collapse-style {
     border: 2px solid #424242;
 }

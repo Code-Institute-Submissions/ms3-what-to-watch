@@ -34,7 +34,7 @@
         </form>
     </div>
 
-    <h5 class="center-align grey-text text-darken-3">Top 10 Best Rated Movies</h5>
+    <h5 class="center-align grey-text text-darken-3">Top 5 Best Rated Movies</h5>
 
     <ul class="collapsible popout">
         {% for movie in movies %}
@@ -44,8 +44,9 @@
                         <i class="fas fa-film"></i>
                         <strong>{{ movie.movie_name }}</strong> ({{ movie.year }})
                     </div>
-                    <div class="col s3">
-                        <!--If I have time! - Put here rating for the movie  -->
+                    <div class="col s3 hide-on-small-only">
+                        <i class="far fa-grin-stars"></i>
+                        <strong>{{ movie.rating }}</strong>/9
                     </div>
                 </div>
                 <div class="collapsible-body center-align collapse-style">
@@ -56,7 +57,6 @@
                     <p>Language: <em>{{ movie.language }}</em></p>
                     <p>WTW Rating: <em>{{ movie.rating }} out of 9</em></p>
                     <div class="col s12">
-                        <!--If I have time! - Put here star rating for the movie  -->
                         <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" 
                             class="btn-small waves-effect black-text cyan lighten-4">
                             Edit
