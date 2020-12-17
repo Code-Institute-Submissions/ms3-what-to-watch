@@ -44,7 +44,7 @@ def add_movie():
     if request.method == "POST":
         mongo.db.movies.insert_one(request.form.to_dict())
         flash("You Have Added A Movie")
-        return redirect(url_for("get_movies"))
+        # return redirect(url_for("get_movies"))
 
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_movie.html", genres=genres)
