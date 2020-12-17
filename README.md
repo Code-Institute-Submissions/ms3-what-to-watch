@@ -62,6 +62,8 @@ The website WTW is also containing CRUD(Create, Read, Update, Delete) functional
    * Update an item's information by clicking on it and then select the 'Edit' button.
    * Delete an item from the database by clicking on it and then select the 'Delete' button.
 
+The User can also filtering movies database by different genres.
+
 ### Left to Implement 
 
    * Adding a register user, Log In/Out options so that the user can still see all the content in the website but restrict the access 
