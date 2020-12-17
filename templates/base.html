@@ -13,7 +13,6 @@
 </head>
 <body>
 
-    <!-- Navbar and Sidebar from Materialize -->
     <header>
         <nav class="nav-extended grey darken-3">
             <div class="nav-wrapper">
@@ -22,7 +21,6 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_home') }}">Home</a></li>
                     <li><a href="{{ url_for('get_movies') }}">All Movies</a></li>
-                    <li><a href="{{ url_for('get_genres') }}">Genre</a></li>
                     <li><a href="{{ url_for('add_movie') }}">Add Movie</a></li>
                 </ul>
             </div>
@@ -32,13 +30,11 @@
             <li><h4 class="center-align grey-text text-darken-3">What To Watch</h4></li>
             <li><a href="{{ url_for('get_home') }}">Home</a></li>
             <li><a href="{{ url_for('get_movies') }}">All Movies</a></li>
-            <li><a href="{{ url_for('get_genres') }}">Genre</a></li>
             <li><a href="{{ url_for('add_movie') }}">Add Movie</a></li>
         </ul>
     </header>
 
     <section>
-        <!-- flash messages code is from CI "Putting it all together" mini-project -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -55,7 +51,6 @@
         {% endblock %}
     </main>
 
-    <!-- Footer from Materialize -->
     <footer class="page-footer grey darken-3">
         <div class="row">
             <div class="col s12 center-align">

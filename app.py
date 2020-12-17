@@ -1,6 +1,3 @@
-# The code for app.py is written following the
-# CI "Putting it all together" mini-project
-# and furher developed for the needs of this project
 import os
 from flask import (
     Flask, flash, render_template,
@@ -23,18 +20,13 @@ mongo = PyMongo(app)
 @app.route("/")
 def get_home():
     movies = mongo.db.movies.find().sort("rating", -1,).limit(5)
-    return render_template("public.html", movies=movies)
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    return render_template("public.html", movies=movies, genres=genres)
 
 
 @app.route("/movies/all")
 def get_movies():
-    query = request.args.get('search')
-    movies = []
-    if query:
-        movies = list(mongo.db.movies.find({"$text": {"$search": query}}))
-    else:
-        movies = list(mongo.db.movies.find())
-
+    movies = list(mongo.db.movies.find().sort("genre_name", 1))
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     return render_template("movies.html", movies=movies, genres=genres)
 
@@ -44,7 +36,6 @@ def add_movie():
     if request.method == "POST":
         mongo.db.movies.insert_one(request.form.to_dict())
         flash("You Have Added A Movie")
-        # return redirect(url_for("get_movies"))
 
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_movie.html", genres=genres)
@@ -67,12 +58,6 @@ def delete_movie(movie_id):
     mongo.db.movies.remove({"_id": ObjectId(movie_id)})
     flash("You Have Deleted A Movie")
     return redirect(url_for("get_home"))
-
-
-@app.route("/genres")
-def get_genres():
-    genres = list(mongo.db.genres.find().sort("genre_name", 1))
-    return render_template("genres.html", genres=genres)
 
 
 @app.route("/genre/<genre_name>/movies")

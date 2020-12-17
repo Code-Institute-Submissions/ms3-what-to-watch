@@ -15,26 +15,7 @@
         </div>
     </div>
 
-    <h5 class="center-align">Search What To Watch</h5>
-
-    <div class="row nav-wrapper">
-        <form method="GET" action="{{ url_for('get_movies') }}" class="col s12">
-            <div class="input-field col s12 grey darken-1 white-text search-style">
-                <input id="search" name="search" type="search" minlength="2" required>
-                <label for="search" class="label-icon">
-                    <i class="fas fa-search"></i>
-                </label>
-            </div>
-            <div class="row col s12 center-align">
-                <a href="{{ url_for('get_home') }}" 
-                    class="cyan lighten-4 btn black-text search-button">Reset</a>
-                <button type="submit" class="btn grey darken-1 search-button"
-                    value="submit">Search</button>
-            </div>
-        </form>
-    </div>
-
-    <h5 class="center-align grey-text text-darken-3">Top 5 Best Rated Movies</h5>
+    <h5 class="center-align grey-text text-darken-3">Top 5 Best Rated Movies:</h5>
 
     <ul class="collapsible popout">
         {% for movie in movies %}
@@ -53,6 +34,7 @@
                     <p>Genre: <em>{{ movie.genre_name }}</em></p>
                     <p>Director: <em>{{ movie.director }}</em></p>
                     <p>Stars: <em>{{ movie.main_cast }}</em></p>
+                    <p>Year: <em>{{ movie.year }}</em></p>
                     <p>Country: <em>{{ movie.country }}</em></p>
                     <p>Language: <em>{{ movie.language }}</em></p>
                     <p>WTW Rating: <em>{{ movie.rating }} out of 9</em></p>
@@ -70,5 +52,38 @@
             </li>
         {% endfor %}
     </ul>
+
+    <h5 class="center-align">WTW Ratings Meaning</h5>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel center-align grey darken-3 white-text">
+                <ul>
+                    <li><em>1 -</em> Avoid At All Cost!</li>
+                    <li><em>2 -</em> Not Good.</li>
+                    <li><em>3 -</em> Well, That Was A Waste.</li>
+                    <li><em>4 -</em> Eh!</li>
+                    <li><em>5 -</em> It's OK.</li>
+                    <li><em>6 -</em> Really Good!</li>
+                    <li><em>7 -</em> A Must See Movie!</li>
+                    <li><em>8 -</em> Favourite Movie!</li>
+                    <li><em>9 -</em> Absolute Masterpiece!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="center-align grey-text text-darken-3">Choose Your Favourite Genre:</h5>
+
+    <div class="row">
+        {% for genre in genres %}
+        <div class="col s5 m2 center-align genre-btn">
+            <div class="card-action">
+                <a href="{{ url_for('get_genre_movies', genre_name=genre.genre_name) }}"
+                    class="btn-small center-align grey darken-3">{{ genre.genre_name }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

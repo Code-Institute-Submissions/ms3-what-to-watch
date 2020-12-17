@@ -1,35 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h5 class="center-align">Search What To Watch</h5>
-
-    <div class="row nav-wrapper">
-        <form method="GET" action="{{ url_for('get_movies') }}" class="col s12">
-            <div class="input-field col s12 grey darken-1 white-text search-style">
-                <input id="search" name="search" type="search" minlength="2" required>
-                <label for="search" class="label-icon">
-                    <i class="fas fa-search"></i>
-                </label>
-            </div>
-            <div class="row col s12 center-align">
-                <!-- Dropdown Trigger -->
-                <!-- <a class="dropdown-trigger btn grey darken-1 center-align search-button"
-                    href="#" data-target="dropdown1">
-                    <i class="fas fa-caret-down"></i> Genres
-                </a> -->
-            
-                <!-- Dropdown Structure -->
-                <!-- <ul id="dropdown1" class="dropdown-content">
-                    {% for genre in genres %}
-                        <li><a href="{{ url_for('get_genre_movies', genre_name=genre.genre_name) }}">{{ genre.genre_name }}</a></li>
-                    {% endfor %}
-                </ul> -->
-                <a href="{{ url_for('get_movies') }}" class="cyan lighten-4 btn black-text search-button">Reset</a>
-                <button type="submit" class="btn grey darken-1 search-button" value="submit">Search</button>
-            </div>
-        </form>
-    </div>
-
     <div class="row center-align">
         <div class="col s12">
             <strong>Filter Your WTW Movies By Genre:</strong>
@@ -63,6 +34,7 @@
                     <p>Genre: <em>{{ movie.genre_name }}</em></p>
                     <p>Director: <em>{{ movie.director }}</em></p>
                     <p>Stars: <em>{{ movie.main_cast }}</em></p>
+                    <p>Year: <em>{{ movie.year }}</em></p>
                     <p>Country: <em>{{ movie.country }}</em></p>
                     <p>Language: <em>{{ movie.language }}</em></p>
                     <p>WTW Rating: <em>{{ movie.rating }} out of 9</em></p>

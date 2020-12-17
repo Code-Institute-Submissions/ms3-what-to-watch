@@ -21,10 +21,10 @@
                         <p>Director: <em>{{ movie.director }}</em></p>
                         <p>Stars: <em>{{ movie.main_cast }}</em></p>
                         <p>Country: <em>{{ movie.country }}</em></p>
+                        <p>Year: <em>{{ movie.year }}</em></p>
                         <p>Language: <em>{{ movie.language }}</em></p>
                         <p>WTW Rating: <em>{{ movie.rating }} out of 9</em></p>
                         <div class="col s12">
-                            <!--If I have time! - Put here star rating for the movie  -->
                             <a href="{{ url_for('edit_movie', movie_id=movie._id) }}"
                                 class="btn-small waves-effect black-text cyan lighten-5">
                                 Edit
@@ -40,14 +40,14 @@
     </ul>
 
     <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('get_movies') }}" class="btn cyan lighten-4 black-text">
-                        Go Back
-                    </a>
-                    <a href="{{ url_for('get_home') }}" class="btn grey darken-1">
-                        Go Home
-                    </a>
-                </div>
-            </div>
+        <div class="col s12 center-align">
+            <a href="{{ url_for('get_movies') }}" class="btn cyan lighten-4 black-text">
+                Go Back
+            </a>
+            <a href="{{ url_for('get_home') }}" class="btn grey darken-1">
+                Go Home
+            </a>
+        </div>
+    </div>
 
 {% endblock %}
