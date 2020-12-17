@@ -17,8 +17,7 @@ couch with the remote in our hands for example and thinking  - What to watch?
 * As a visitor, I want to be able to get ideas for my search directly from the openning page of the site. 
 * As a visitor, I want to easily navigate and find all content easy to read and all options easy to use.
 * As a user, I want to be able to share or add content on the website as my personal suggestion.
-* As a user, I want to be able to see list of movies from specific genres. 
-* As a user, I want to be able to search for content by name, genre, actors etc. 
+* As a user, I want to be able to see list of movies from specific genres.  
 * As a user, I want to be able to find further information about a contant that I'm interested in watching
  via additional links for example. 
 
@@ -103,6 +102,64 @@ to the edit and delete functionality to the items that were created only by spec
 
 ## Testing
 
+### UX Testing
+
+ What To Watch(WTW) website provides users with easy and simple to use layout. Easy to understand 
+ content and navigate throughout the app with a short menu on the top right.
+
+ With the home page users receive short and clear description about the purpose of the website.
+Directly under the description can be found top rated suggestions that can already give an idea 
+to the user What To Watch.
+Under that the user can get familiar with what the rating numburs mean if the goal is to interact 
+with the app to add content. 
+After that there is a easy and quick way to filter all movies based on their genre, so the user can
+get a list of suggestions only from the genre he like.
+
+At the bottom in the footer element links are provided that can further inform the user for a movie 
+he finds interesting to check out.
+
+In The 'All Movies' page the user can view all containing movies and also filter by genre. By clicing on a movie 
+the coplete info about it is showing in a pop out window where also can interact further with the data with the 
+Edit and Delete buttons. 
+
+In the 'Add Movie' page users can add content they like and want to recommend to other users.
+
+All functions WTW app provides were tested on different devices and by the developer, frends and family and no 
+issues were shown during testing.
+
+### Browsers and OS Testing
+   
+   WTW was tested on:
+   * Chrome
+   * Edge
+   * Android
+   * iOS 
+
+   No issues were found during testing.
+
+### Device Testing
+
+WTW is tested on:
+   * Samsung Galaxy S20 FE
+   * IPhone 10 Pro
+   * Huawei P20 Pro
+
+Other devices tested:
+   * Acer Aspire 5 A515-51G
+   * Acer B7 series-B277(Desktop Monitor)
+
+### Links Testing
+
+All links and buttons are tested. No problems were shown on tested devices.
+
+### Problems
+
+Search bar is not included in the project like it is shown in the wireframes beacause 
+there was issues creating a text search index and until the project deadline solution was not found.
+It will be added in the future, but for now after communicating with mentor, tutor support and other 
+students on Slack I couldn't fix the problem. I tried like in the CI 'Putting it all together' mini-project 
+videos, I tried directly in MongoDB and in my app.py file but either no result in MongoDB or getting errors.   
+
 ## Deployment
 
 1. Createing GitHub repository for the project website.
@@ -146,3 +203,4 @@ button 'View' to open the website.
    * Akshat Garg (mentor) - THANK YOU for the advices, guidance, feedback and patience throughout the developing process of WTW project.
    * Inspiration about the What To Watch project came from the same question I often ask my self or being asked from other people. The need 
    for place where recommendations, good ideas can be stored and answer that question easy and fast.
+   * Slack - a lot of good and helping people there - thank you!
