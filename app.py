@@ -4,7 +4,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def get_home():
-    movies = mongo.db.movies.find().sort("rating", -1)
+    movies = mongo.db.movies.find().sort("rating", -1,).limit(5)
     return render_template("public.html", movies=movies)
 
 
@@ -78,7 +78,8 @@ def get_genres():
 @app.route("/genre/<genre_name>/movies")
 def get_genre_movies(genre_name):
     movies = list(mongo.db.movies.find({"genre_name": genre_name}))
-    return render_template("genre_movies.html", genre_name=genre_name, movies=movies)
+    return render_template(
+        "genre_movies.html", genre_name=genre_name, movies=movies)
 
 
 if __name__ == "__main__":
